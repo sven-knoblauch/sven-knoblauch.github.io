@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style/header_footer.css">
+    <link rel="stylesheet" href="style/projects.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+</head>
+
+
+<body>
+
+    <canvas class="background"></canvas>
+    <header>
+        <nav>
+            <div>
+                <div id="nav-colored-box"></div>
+                <div id="nav-header-highlight">
+                    Sven Knoblauch</div> / STUDENT
+            </div>
+            <div id="header-links">
+                <div onclick="location.href='./index.html'">ABOUT ME</div>
+                <div onclick="location.href='./cv.html'">CV</div>
+                <div class="active">PROJECTS</div>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <main>
+        <div id="main-projects">
+            <div id="projects-chips-container"></div>
+            <input id="project-searchbar" oninput="filter_projects();" type="text" placeholder="Search...">
+            <div id="project-container"></div>
+        </div>
+    </main>
+
+
+
+
+
+
+    <footer>
+        <div id="footer-container-left">
+            <div id="footer-container-AGB">
+                <a>Imprint</a>
+                <a>Privacy</a>
+                <a>AGB</a>
+            </div>
+            <div>@ 2022 Sven Knoblauch</div>
+        </div>
+
+        <div id="footer-container">
+            <div>
+                <div id="footer-bold">E-Mail</div>
+                <div>sven@web.de</div>
+            </div>
+            <div>
+                <div id="footer-bold">Socials</div>
+                <div id="footer-socials-images">
+                    <img onclick="location.href='https://www.kaggle.com/svenknoblauch'" id="footer-icons" src="images/kaggle-icon.png" alt="kaggle logo">
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src="scripts/particles.js" defer></script>
+    <script src="scripts/projects.js" defer></script>
+</body>
+
+</html>

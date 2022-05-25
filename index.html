@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style/header_footer.css">     
+    <link rel="stylesheet" href="style/index.css">     
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <div>
+                <div id="nav-colored-box"></div>
+                <div id="nav-header-highlight">
+                    Sven Knoblauch</div> / STUDENT
+            </div>
+            <div id="header-links">
+                <div class="active">ABOUT ME</div>
+                <div onclick="location.href='./cv.html'">CV</div>
+                <div onclick="location.href='./projects.html'">PROJECTS</div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div id="color-box">
+            
+        </div>
+        <div id="main-content-container">
+            <div id="aboutme-card">
+                <div>
+                    <img id="aboutme-profile-picture" src="images/profile-picture.png" alt="profile picture">
+                    <div id="aboutme-card-name">Sven<br>Knoblauch</div>
+                    <div id="aboutme-card-divider"></div>
+                    <div id="aboutme-card-description">STUDENT</div>
+                </div>
+                <div>
+                    <img onclick="location.href='https://www.kaggle.com/svenknoblauch'" class="aboutme-card-icons" src="images/kaggle-icon.png" alt="kaggle logo">
+                </div>
+            </div>
+
+            <div id="aboutme-text-container">
+                <div>Hello</div>
+                <div>Who am i & What am i doing</div>
+                <div>
+                    <a href="./cv.html" class="aboutme-text-buttons">CV</a>
+                    <a href="./projects.html" class="aboutme-text-buttons">Projects</a>
+                </div>
+                <div>
+                    I live in Germany and i am a student in the Unversity of Ulm. I major in computer
+                     science with the focus on datascience and machine learning. My passion
+                    is science and expecialy machine learning.
+                    In my free time i like to make programming projects and to play table tennis.
+                </div>
+            </div>   
+        </div>
+    </main>
+
+    
+    <footer>
+        <div id="footer-container-left">
+            <div id="footer-container-AGB">
+                <a>Imprint</a>
+                <a>Privacy</a>
+                <a>AGB</a>
+            </div>
+            <div>@ 2022 Sven Knoblauch</div>
+        </div>
+
+        <div id="footer-container">
+            <div>
+                <div id="footer-bold">E-Mail</div>
+                <div>sven@web.de</div>
+            </div>
+            <div>
+                <div id="footer-bold">Socials</div>
+                <div id="footer-socials-images">
+                    <img onclick="location.href='https://www.kaggle.com/svenknoblauch'" id="footer-icons" src="images/kaggle-icon.png" alt="kaggle logo">
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src="scripts/p5.js" defer></script>
+    <script src="scripts/index.js" defer></script>
+</body>
+
+</html>
