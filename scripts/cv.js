@@ -14,22 +14,29 @@ function setup() {
 }
 
 function updateParticle(){
-  console.log("updated particles");
-  width = box.offsetWidth;
-  height = box.offsetHeight;
-  clear();
-  if(width < 1){
-    return
-  }
-	for (let i = 0; i < n; i++) {
-		let x = t * random(0, width/t);
-		let y = t * random(0, height/t);
-		let c = color(random(colors));
-		let size = random(5, 5 + 2 * scaling_factor);
-		
-		fill(c);
-		ellipse(x,y,size);
-	}
+    console.log("updated particles");
+
+    if(width==box.offsetWidth && height==box.offsetHeight){
+        return
+    }
+
+    width = box.offsetWidth;
+    height = box.offsetHeight;
+    clear();
+    
+    if(width < 1){
+        return
+    }
+
+    for (let i = 0; i < n; i++) {
+        let x = t * random(0, width/t);
+        let y = t * random(0, height/t);
+        let c = color(random(colors));
+        let size = random(5, 5 + 2 * scaling_factor);
+        
+        fill(c);
+        ellipse(x,y,size);
+    }
 }
 
 function createParticles() {
