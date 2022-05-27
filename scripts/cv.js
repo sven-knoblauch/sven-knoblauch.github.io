@@ -1,7 +1,7 @@
-const n = 20;
+const n = 30;
 const colors = ["#1a7788","#e04257"];
 const elem_id = "background";
-const scaling_factor = 4;
+const scaling_factor = 5;
 const t = 4;
 
 const box = document.getElementById(elem_id);
@@ -9,8 +9,8 @@ let width = box.offsetWidth;
 let height = box.offsetHeight;
 
 function setup() {
-	createParticles();
-  	window.addEventListener('resize', updateParticle);
+  createParticles();
+  window.addEventListener('resize', updateParticle);
 }
 
 function updateParticle(){
