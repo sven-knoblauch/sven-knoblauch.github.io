@@ -11,7 +11,7 @@ CV
     margin-bottom: 5rem;
 }
 
-.background {
+#background {
     position: absolute;
     top: 0;
     bottom: 0;

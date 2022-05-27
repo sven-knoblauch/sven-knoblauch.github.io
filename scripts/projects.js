@@ -18,7 +18,9 @@ function add_chip(name){
     text.appendChild(document.createTextNode(name));
     chip.appendChild(text);
     chip.classList.add("chips");
-    chip.classList.add("noselect");    
+    chip.classList.add("noselect");
+    text.classList.add("noselect");
+    
     var img = document.createElement("img");
     img.src = "images/checkmark.svg";
     chip.appendChild(img);
@@ -45,7 +47,7 @@ const projects_container = document.getElementById("project-container");
 
 function add_project(name, description, img_url, html_url){    
     var card = document.createElement("div");
-    card.className += " project-card noselect";
+    card.className += " project-card";
 
   
 
@@ -60,7 +62,7 @@ function add_project(name, description, img_url, html_url){
     
 
     var project_link = document.createElement("a");
-    project_link.className += " project-card-link";
+    project_link.className += " project-card-link noselect";
     project_link.appendChild(document.createTextNode("Goto Project"));
     project_link.href = html_url;
     text_container.appendChild(project_link);
