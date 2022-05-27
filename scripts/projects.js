@@ -1,27 +1,3 @@
-var particles = Particles.init({
-	selector: '.background',
-    color: ['#085563', '#d52940'],
-    connectParticles: false,
-    speed: 0,
-    sizeVariations: 7,
-    maxParticles: 220,
-    responsive: [
-        {
-          breakpoint: 768,
-          options: {
-            maxParticles: 100
-          }
-        },
-        {
-            breakpoint: 425,
-            options: {
-              maxParticles: 30
-            }
-        }
-    ]
-});
-
-
 const projects = [
     {"name": "Newton's method",
         "description": "The Newton-Raphson method is a root finding algorithm and can be used to find x-intersection of real valued functions. It is an iterative algorithm which uses the tangent of the function for the guidline of the next iteration step.",

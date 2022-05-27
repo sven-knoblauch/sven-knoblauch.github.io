@@ -10,10 +10,11 @@ let height = box.offsetHeight;
 
 function setup() {
 	createParticles();
-  window.addEventListener('resize', updateParticle);
+  	window.addEventListener('resize', updateParticle);
 }
 
 function updateParticle(){
+  console.log("updated particles");
   width = box.offsetWidth;
   height = box.offsetHeight;
   clear();
