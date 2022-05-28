@@ -106,10 +106,3 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-
-@media screen and (min-width:768px){    
-    main > div{
-        width: 80%;
-        max-width: 55rem;
-    }
-}
