@@ -36,10 +36,12 @@ let start_x = 1.5;
 let x;
 let x_old;
 
+
+
 function setup() {
     createCanvas(width, height).parent('canvas_container');
     background(255);
-    translate(0, height)
+    translate(0, height);
     noLoop();
 
     f = (x) => {return x**2};
@@ -61,7 +63,7 @@ function drawCurrentState(){
     nextStep();
 }
 
-function nextStep(){ 
+function nextStep(){
     clear();
     background(255);
     drawGrid();
