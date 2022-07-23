@@ -1,0 +1,18 @@
+#main-cv{
+    height: 100%;
+    background-color: var(--background-color);
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+#background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
