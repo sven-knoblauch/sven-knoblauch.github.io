@@ -182,6 +182,16 @@ footer{
               user-select: none;
   }
 
+
+/*
+Sonstiges
+*/
+h2{
+    padding-top: 3rem;
+    color: var(--color3);
+    font-size: 2rem;
+}
+
 /*
 media queries
 */

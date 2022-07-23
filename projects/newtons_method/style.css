@@ -28,11 +28,7 @@ main > div{
     padding: 1rem 2rem 10rem 2rem;
 }
 
-h2{
-    padding-top: 3rem;
-    color: var(--color3);
-    font-size: 2rem;
-}
+
 
 
 #canvas_container{
