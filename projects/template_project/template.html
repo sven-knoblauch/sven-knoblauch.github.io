@@ -8,8 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 </head>
 
@@ -35,105 +33,7 @@
         <div id="main-cv">
             <div id="background"></div>
             
-            <div id="text1">
-                <h2>Introduction</h2>
-                <strong>The Newton-Raphson method</strong> is a root finding algorithm,
-                named after Isaac Newton and Joseph Raphson.
-                The algorithm is an iterative algorithm and for real valued functions,
-                it calculates an approximation of the intersection with the x-axis of
-                 the function. This is made
-                by using the tangent line on \(f(x_n)\) and following this line to the
-                intersection to the x-axis, and use this point \(x_{n+1}\) as the new
-                x value for the next iteration.
-                At first, a initial guess is made, where the algorithm starts from,
-                preferably near the minimum of the function, here we use \(x_n\) for the 
-                initial guess. 
-                
-                <h2>Derivation</h2>
-                
-                Now we want to calculate the <strong>tangent equation</strong>. First we
-                need to calculate the slope \(m\) of the tangent on that point,
-                for that we need the first derivative \(\eqref{1}\).
 
-                \[ m = f'(x_n) \tag{1} \label{1} \]
-
-                The second parameter for the tangent equation is the 
-                y-intercept of the tangent line. To calculate this, we 
-                need to evaluate the function \(f(x_n)\) and subtract
-                the value of the slope times \(x_n\). The result is
-                the y-intercept \(\eqref{2}\).
-
-                \[ a = f(x_n) - m * x_n \tag{2} \label{2} \]
-
-                Now we can combine equation \(\eqref{1}\) and equation \(\eqref{2}\)
-                to form the tangent equation \(\eqref{3}\).
-
-                \[ g(x) = x * m + a \tag{3} \label{3} \]
-
-                Now we need to calculate the intersection between the tangent line
-                and the x-axis. For this we set \(g(x) = 0\) and adjust the formula for
-                the new x-value.
-
-
-                \[ g(x) = x_{n+1} * m + a = 0 \tag{4} \label{4} \]
-                \[ 0 = x_{n+1} * f'(x_n) + f(x_n) - f'(x_n) * x_n \]
-                \[ x_{n+1} * f'(x_n) = f'(x_n) * x_n - f(x_n) \]
-                \[ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \tag{5} \label{5} \]
-
-                
-            </div>
-
-            <div id="canvas_container"></div>
-
-            <div class="canvas_controls">
-                <div>
-                    <div>\(f(x) = \)</div>
-                    <select id="function_select" onchange="changeFunction()">
-                        <option value="0">x</option>
-                        <option value="1" selected>x^2</option>
-                        <option value="2">x^3</option>
-                        <option value="3">tanh(x)</option>
-                    </select>
-                </div>
-                <div>
-                    <div id="controls_fx">\(x_n = \)</div>
-                    <input id="number_input_x_n" type="number" onchange="updateStartX()">
-                    <div id="controls_fxn">\(f(x_n) = \)</div>
-                    <input id="number_input_y_n" disabled>
-                </div>
-                <div>
-                    <div>\(x_{n+1} = \)</div>
-                    <input id="number_input_x_n1" disabled>
-                    <div>\(f(x_{n+1}) = \)</div>
-                    <input id="number_input_y_n1" disabled>
-                </div>
-                <div>
-                    <button onclick="nextStep()">Next</button>
-                    <button onclick="resetGraph()">Reset</button>
-                </div>
-            </div>
-
-            <div id="text2">
-                <h2>Order of Convergence</h2>
-                The Convergence is <strong>at least quadratic</strong>, if the following conditions
-                are satisfied. First the derivative can't be zero on the intervall
-                of the method. Second, the second derivative must be continous and
-                the first guess of x musst be sufficiently close to the x-intersection.
-                This algorithm not always converge to the x-intersection, for example, when the gradient
-                is close to zero, for example in the \(tanh(x)\) function with a start value of \(x_0 = 2\).
-                <h2>Extreme value problems</h2>
-                Introducing the <strong>second derivative</strong> to the
-                algorithm \(\eqref{6}\), can make this
-                algorithm search for an extreme value Because the method is
-                searching for the x-intersect in the derivative, the result is 
-                a possible value for a maximum or minimum, which must be
-                determined afterwards.
-
-                \[ x_{n+1} = x_n - \frac{f'(x_n)}{f''(x_n)} \tag{6} \label{6} \]
-
-                For the same Convergence, the conditions are changed where the second derivative
-                represents the first derivative and the first derivative represents the function.
-            </div>
 
         </div>
     </main>
