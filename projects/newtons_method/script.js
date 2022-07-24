@@ -1,8 +1,8 @@
 
 //define size of canvas
-const box = document.getElementById("canvas_container");
-const width = box.offsetWidth-2;
-const height = box.offsetHeight-2;
+let box = document.getElementById("canvas_container");
+let width = box.offsetWidth-2;
+let height = box.offsetHeight-2;
 
 //get number input element
 let number_input_x_n = document.getElementById("number_input_x_n");
@@ -36,9 +36,11 @@ let start_x = 1.5;
 let x;
 let x_old;
 
+let container;
 
 
 function setup() {
+    container = document.getElementById("canvas_container");
     createCanvas(width, height).parent('canvas_container');
     background(255);
     translate(0, height);
@@ -47,6 +49,17 @@ function setup() {
     f = (x) => {return x**2};
 
     initGraph();
+}
+
+function windowResized() {
+    width = box.offsetWidth-2;
+    height = box.offsetHeight-2;
+    resizeCanvas(width, height);
+    background(255);
+    translate(0, height);
+    drawGrid();
+    draw_connect_Points();
+    drawCurrentState();
 }
 
 function initGraph(){
