@@ -40,7 +40,6 @@ let container;
 
 
 function setup() {
-    container = document.getElementById("canvas_container");
     createCanvas(width, height).parent('canvas_container');
     background(255);
     translate(0, height);

@@ -2,13 +2,18 @@ const projects = [
     {"name": "Template",
         "description": "template description",
         "tags": ["template"],
-        "image": "projects/template_project/icon.jpg",
-        "url": "projects/template_project/template.html"},
+        "image": "projects/template/icon.jpg",
+        "url": "projects/template/template.html"},
     {"name": "Newton's method",
         "description": "The Newton-Raphson method is a root finding algorithm and can be used to find x-intersection of real valued functions. It is an iterative algorithm which uses the tangent of the function for the guidline of the next iteration step.",
         "tags": ["math","optimization","machine learning"],
         "image": "projects/newtons_method/icon.png",
-        "url": "projects/newtons_method/newtons_method.html"}
+        "url": "projects/newtons_method/newtons_method.html"},
+    {"name": "Perceptron",
+        "description": "Perceptron lern algorithmus",
+        "tags": ["machine learning", "perceptron"],
+        "image": "projects/perceptron/icon.png",
+        "url": "projects/perceptron/perceptron.html"}
 ]
 
 
