@@ -26,7 +26,7 @@ main > div{
 }
 
 #block2{
-    padding: 0 2rem 2rem 2rem;
+    padding: 0 2rem 4rem 2rem;
 }
 
 #canvas_container{
@@ -46,7 +46,7 @@ main > div{
     background-color: white;
     border: 1px solid rgb(71, 71, 71);
     border-top: none;
-    height: 8rem;
+    height: 4rem;
     width: 20rem;
     display: flex;
     flex-direction: column;

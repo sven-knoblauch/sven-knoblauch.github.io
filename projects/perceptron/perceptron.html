@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 </head>
 
@@ -33,8 +36,28 @@
         <div>
             <div id="block1">
                 <h2>Perceptron Learn Algorithm</h2>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+                Let's first discuss a simple perceptron and then inspect a simple dataset, on which we will train the perceptron.
+                A Perceptron is a neuron with adaptable weights \(w\) and and a threshold \(\theta\). The class labels are \(1\) or \(-1\).
+                The test to classify a point \(x\) is described with the dot product \(y = \langle w, x\rangle - \theta \).
+                If the result is \(y \geq 0\) then the predicted class is \(1\), otherwise the class is \(-1\).
+                For the Algorithm, for each step, it will be interated over all points, and when the predicted class missmatches
+                the class label, a \( weights \) is computed, which changes the weight vector and with that also the 
+                seperation line to have a better decision. To make the calculations more easier, the bias \(\theta \)
+                will be concatenated with the weight vector and for each point, one dimension will be added with a constant of 1.
+                <ul>
+                    <li>for each point in the data do</li>
+                    <ul>
+                        <li>calculate \(y = dot(weights, point) * class\)</li>
+                        <li>if \(y < 0\) then point is wrongly classified</li>
+                        <ul>
+                            <li>calculate \( \Delta x = weights * class \)</li>
+                            <li>calculate new \( weights = weights + \Delta x\) </li>
+                        </ul>
+                    </ul>
+                    <li>repreat until all points are correctly classified or maximum steps is reached</li>
+                </ul>
+            
+            
             </div>
 
 
@@ -45,8 +68,13 @@
 
             <div id="block2">
                 <h2>Convergence</h2>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+                If the problem is linear saparable, the algorithm stops after a finite number of steps
+                and finds a decision line, which seperates all given points correcly. If the problem is not
+                linear separable, kernel function can be used to project the data in higher dimensional spaces,
+                where the data can then be linear separated. A drawback of the perceptron algorithm is, 
+                that the decision line has not a maximum margin, which can lead to bad results in some cases, 
+                where unseen data gets wrongly classified. To counter this, a support vector machine can be used,
+                which maximizes also the margin.
             </div>
 
 
