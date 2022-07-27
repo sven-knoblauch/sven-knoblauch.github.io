@@ -10,10 +10,15 @@ const projects = [
         "image": "projects/newtons_method/icon.png",
         "url": "projects/newtons_method/newtons_method.html"},
     {"name": "Perceptron",
-        "description": "Perceptron lern algorithmus",
+        "description": "The Perceptron learn algorithm, learns a decision line in a finite number of steps, if the problem is linear separable. The decision lines consits of a weight vector and a bias.",
         "tags": ["machine learning", "perceptron"],
         "image": "projects/perceptron/icon.png",
-        "url": "projects/perceptron/perceptron.html"}
+        "url": "projects/perceptron/perceptron.html"},
+    {"name": "Rasterization",
+    "description": "Rasterization... In Progress",
+    "tags": ["render pipeline", "rasterization"],
+    "image": "projects/rasterization/icon.png",
+    "url": "projects/rasterization/rasterization.html"}
 ]
 
 

@@ -1,0 +1,45 @@
+#background{
+    position: absolute;
+    background-color: var(--background-color);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+}
+
+main{
+    display: grid;
+    justify-items: center;
+}
+
+main > div{
+    background-color: var(--color1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#block1{
+    padding: 0 2rem 2rem 2rem;
+}
+
+#canvas_container{
+    width: 20rem;
+    height: 20rem;
+    border: 1px solid rgb(75, 75, 75);
+    border-radius: 0.3rem 0.3rem 0rem 0rem;
+    margin-top: 2rem;
+}
+
+#canvas_container canvas{
+    border-radius: 0.3rem 0.3rem 0rem 0rem;
+}
+
+@media screen and (min-width:768px){    
+    main > div{
+        width: 80%;
+        max-width: 55rem;
+    }
+}
