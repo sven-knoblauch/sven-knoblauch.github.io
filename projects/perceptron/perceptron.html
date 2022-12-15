@@ -47,11 +47,11 @@
                 <ul>
                     <li>for each point in the data do</li>
                     <ul>
-                        <li>calculate \(y = dot(weights, point) * class\)</li>
+                        <li>\(y = dot(weights, point) * class\)</li>
                         <li>if \(y < 0\) then point is wrongly classified</li>
                         <ul>
-                            <li>calculate \( \Delta x = weights * class \)</li>
-                            <li>calculate new \( weights = weights + \Delta x\) </li>
+                            <li>\( \Delta x = weights * class \)</li>
+                            <li>\( weights = weights + \Delta x\)</li>
                         </ul>
                     </ul>
                     <li>repreat until all points are correctly classified or maximum steps is reached</li>

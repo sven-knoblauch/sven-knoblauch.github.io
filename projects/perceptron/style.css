@@ -8,6 +8,7 @@
 }
 
 main{
+    width: 100%;
     display: grid;
     justify-items: center;
 }
@@ -27,6 +28,10 @@ main > div{
 
 #block2{
     padding: 0 2rem 6rem 2rem;
+}
+
+ul {
+    padding-left: 1rem;
 }
 
 #canvas_container{
