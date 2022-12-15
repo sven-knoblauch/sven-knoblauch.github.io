@@ -16,15 +16,16 @@ function setup() {
     
     drawGrid(width_buckets, height_buckets);
 
-	let p1 = createVector(2, 38);
-	let p2 = createVector(38, 2);
-	let col1 = color(255, 50, 50);
-	let col2 = color(20, 50, 250);
-	draw_line(p1, p2, col1, col2)
-
+	let v1 = createVector(5, 5);
+	let v2 = createVector(30, 10);
+	let v3 = createVector(20, 30);
+	
 	let c1 = color(255, 204, 50);
-	let v1 = createVector(20, 20);
-    draw_circle(v1, 10, c1);
+	let c2 = color(50, 204, 255);
+	let c3 = color(255, 50, 204);
+	
+	
+	draw_triangle([v1, v2, v3], [c1, c2, c3]);
 }
 
 function drawGrid(w, h){
@@ -42,6 +43,84 @@ function drawGrid(w, h){
     }
 }
 
+function reset_screen(){
+	background(255);
+    drawGrid(width_buckets, height_buckets);
+}
+
+function draw_random_triangle(){
+	reset_screen();
+	let v1 = createVector(2+Math.floor(random(10)), 2+Math.floor(random(10)));
+	let v2 = createVector(30+Math.floor(random(10)), 10+Math.floor(random(20)));
+	let v3 = createVector(2+Math.floor(random(10)), 30+Math.floor(random(10)));
+	
+	let c1 = color(random(255), random(255), random(255));
+	let c2 = color(random(255), random(255), random(255));
+	let c3 = color(random(255), random(255), random(255));
+	
+	draw_triangle([v1, v2, v3], [c1, c2, c3]);
+}
+
+function draw_triangle(points, colors) {
+	
+	let z = points.map((k, i) => [k, colors[i]]);
+	z.sort((a, b) => {return a[0].y - b[0].y;});
+	
+	let p0 = z[0][0];
+	let p1 = z[1][0];
+	let p2 = z[2][0];
+	let c1 = z[0][1];
+	let c2 = z[1][1];
+	let c3 = z[2][1];
+	
+	let xl = p0.x;
+	let xr = p0.x;
+	let y = p0.y;
+	let deltaL = (p2.x - p0.x)/(p2.y - p0.y);
+	let deltaR = (p1.x - p0.x)/(p1.y - p0.y);
+	let nb = p1.y-p0.y;
+	let nt = p2.y-p1.y;
+	
+	let side_vec1 = p5.Vector.sub(p2, p0);
+	let normale = createVector(side_vec1.y, -side_vec1.x);
+	let side_vec2 = p5.Vector.sub(p1, p0);
+	let side = Math.sign(p5.Vector.dot(normale, side_vec2));
+	
+	if(side<0){
+		deltaL = (p1.x - p0.x)/(p1.y - p0.y);
+		deltaR = (p2.x - p0.x)/(p2.y - p0.y);
+	}
+	
+	for(let i=0; i<nb; i++) {
+		let alpha1 = (y-p0.y)/(nb);
+		let alpha2 = (y-p0.y)/(nt+nb);
+		let c_blend1 = lerpColor(c1, c3, alpha2);
+		let c_blend2 = lerpColor(c1, c2, alpha1);
+		processSegment(y, round(xl), round(xr), c_blend1, c_blend2);
+		xl += deltaL;
+		xr += deltaR;
+		y++;
+	}
+
+	if(side<0){
+		deltaL = (p2.x - p1.x)/(p2.y - p1.y);
+	}else{
+		deltaR = (p2.x - p1.x)/(p2.y - p1.y);
+	}
+	
+	for(let i=0; i<=nt; i++) {
+		alpha1 = (y-p1.y)/(nt);
+		alpha2 = (y-p0.y)/(nt+nb);
+		c_blend1 = lerpColor(c1, c3, alpha2);
+		c_blend2 = lerpColor(c2, c3, alpha1);
+		processSegment(y, round(xl), round(xr), c_blend1, c_blend2);
+		xl += deltaL;
+		xr += deltaR;
+		y++;
+	}
+}
+
+
 function writePixel(x, y, color){
 	y = y+1;
 	fill(color);
@@ -50,121 +129,12 @@ function writePixel(x, y, color){
 	square(x1, y1, fragment_size);
 }
 
-function writeCirclePixels(x, y, p, color){
-	writePixel(x+p.x, y+p.y, color);
-	writePixel(-x+p.x, y+p.y, color);
-	writePixel(x+p.x, -y+p.y, color);
-	writePixel(-x+p.x, -y+p.y, color);
-	writePixel(y+p.x, x+p.y, color);
-	writePixel(-y+p.x, x+p.y, color);
-	writePixel(y+p.x, -x+p.y, color);
-	writePixel(-y+p.x, -x+p.y, color);
-}
-
-function draw_random_circle(){
-	let a = random(255);
-	let b = random(255);
-	let c = random(255);
-
-	let col = color(a,b,c);
-	let p = createVector(10+Math.floor(random(20)), 10+Math.floor(random(20)));
-	let r = 5 + Math.floor(random(5));
-
-	draw_circle(p, r, col);
-}
-
-function draw_random_object(){
-	if(Math.random() < 0.5){
-		draw_random_circle();
-	}else{
-		draw_random_line();
-	}
-}
-
-function draw_random_line(){
-	let a = random(255);
-	let b = random(255);
-	let c = random(255);
-	let col1 = color(a,b,c);
-	a = random(255);
-	b = random(255);
-	c = random(255);
-	let col2 = color(a,b,c);
-
-	let p1 = createVector(Math.floor(random(40)),Math.floor(random(40)))
-	let p2 = createVector(Math.floor(random(40)),Math.floor(random(40)))
-
-	draw_line(p1, p2, col1, col2)
-}
-
-function reset_screen(){
-	background(255);
-	drawGrid(width_buckets, height_buckets);
-}
-
-function draw_circle(p, r, c) {
-	let x = 0;
-	let y = r;
-	let d = 1-r;
-	writeCirclePixels(x, y, p, c);
-	
-	while (y > x) {
-		if (d < 0){
-			d += 2 * x + 3;
-			x++;
-		}else{
-			d += 2 * x - 2 * y + 5;
-			x++;
-			y--;
-		}
-		writeCirclePixels(x, y, p, c);
-	}
-}
-
-function draw_line(p0, p1, c0, c1){
-	let dx = abs(p1.x - p0.x);
-	let dy = abs(p1.y - p0.y);
-	let sx = p0.x < p1.x ? 1 : -1;
-	let sy = p0.y < p1.y ? 1 : -1;
-	let d = 2 * dy - dx;
-	let dE = 2 * dy;
-	let dN = -2 * dx;
-	let dNE = 2 * (dy - dx);
-	let x = p0.x;
-	let y = p0.y;
-	writePixel(x, y, c0);
-	let alpha = 1;
-	
-	if(dy > dx){
-		d = dy - 2 * dx;
-		while(y != p1.y){
-			alpha = 1-abs(p1.y-y)/dy;
-			let c = lerpColor(c0, c1, alpha);
-			
-			if((d > 0) || (d == 0) && (sy == 1)){
-				d += dN;
-				y = y + sy;
-			}else{
-				d += dNE;
-				x = x + sx;
-				y = y + sy;
-			}
-			writePixel(x, y, c);
-		}
-	}else{
-		while(x != p1.x){
-			alpha = 1-abs(p1.x-x)/dx;
-			let c = lerpColor(c0, c1, alpha);
-			
-			if((d < 0) || (d == 0) && (sx == 1)){
-				d += dE;
-				x = x + sx;
-			}else{
-				d += dNE;
-				x = x + sx;
-				y = y + sy;
-			}
-			writePixel(x, y, c);
-		}
+function processSegment(y, xl, xr, c0, c1) {
+	let alpha = 0;
+	let dx = xr - xl+1;
+	for(let x=xl; x<=xr; x++) {
+		alpha = 1-((xr - x)/dx);
+		let c = lerpColor(c0, c1, alpha);
+		writePixel(x, y, c);
 	}
 }

@@ -74,6 +74,7 @@ function draw_random_circle(){
 }
 
 function draw_random_object(){
+	reset_screen();
 	if(Math.random() < 0.5){
 		draw_random_circle();
 	}else{
