@@ -16,6 +16,12 @@ function setup() {
     
     drawGrid(width_buckets, height_buckets);
 
+	let p1 = createVector(2, 38);
+	let p2 = createVector(38, 2);
+	let col1 = color(255, 50, 50);
+	let col2 = color(20, 50, 250);
+	draw_line(p1, p2, col1, col2)
+
 	let c1 = color(255, 204, 50);
 	let v1 = createVector(20, 20);
     draw_circle(v1, 10, c1);

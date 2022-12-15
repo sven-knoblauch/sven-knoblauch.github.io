@@ -22,16 +22,18 @@ main > div{
     padding-bottom: 3rem;
 }
 
-#block1{
-    padding: 0 2rem 2rem 2rem;
-}
-
-#block2{
+.block{
     padding: 0 2rem 2rem 2rem;
 }
 
 #midpoint-line-picture{
     padding-top: 2rem;
+    width: 100%;
+}
+
+#midpoint-circle-picture{
+    padding-top: 2rem;
+    width: 100%;
 }
 
 #canvas_container{

@@ -18,7 +18,7 @@
         <nav>
             <div>
                 <div id="nav-colored-box"></div>
-                <div id="nav-header-highlight">Rasterization - Midpoint Line Algorithm</div>
+                <div id="nav-header-highlight">Midpoint Algorithm</div>
             </div>
             <div id="header-links">
                 <div onclick="location.href='../../index.html'">ABOUT ME</div>
@@ -31,7 +31,7 @@
 
     <main>
         <div>
-            <div id="block1">
+            <div class="block">
                 <h2>Rasterization</h2>
                 In the <strong>Rasterization Stage</strong>, the main goal is the convertion of primitives to an image of pixels. There are multiple ways to approximate a shape and translate it to
                 an realistic pixel image. Here we are discussing the procedure of midline algorithm. This algorithm can be implemented for multiple shapes. In this example we will discuss
@@ -47,20 +47,25 @@
             </div>
 
             <div>
-                <img id="midpoint-line-picture" src="rasterization-midpoint-line-alg.png" alt="midpoint line algorithm visualization">
+                <img id="midpoint-line-picture" src="midpoint-line-alg.png" alt="midpoint line algorithm visualization">
             </div>
 
-            <div id="block2">
+            <div class="block">
                 <h2>Midpoint Algorithm for Circles</h2>
-                
+                To draw a circle, only an <strong>eighth</strong> of the cirlce has to be drawn, all other pixels can be mirrored and rotated. For this shape a <strong>decision Function</strong> is defined. The decision if
+                the next pixel is in the east (E) or in the south-east (SE), is made with the midpoint between these two points. The east pixel is used if the midpoint is not in the circle, otherwise the south-east
+                pixel is used. For optimization, the gradient can be calculated to reduce the number of multiplicaitons. For other shapes, like an ellipse, multiple cases has to be implemented to
+                accompensate different tangents of the points.
+            </div>
 
+            <div>
+                <img id="midpoint-circle-picture" src="midpoint-circle-alg.png" alt="midpoint circle algorithm visualization">
+            </div>
 
-
-
+            <div class="block">
                 <h2>Example</h2>
-                The following example is producing lines and circles at random with the discussed algorithms. For the implementation the javascript files can be inspected. For the
+                The following example is producing lines and circles at random with the discussed algorithms. For the implementation, the javascript files can be inspected. For the
                 color of the lines, a simple interpolation between two colors are made.
-
             </div>
 
             <div id="canvas_container"></div>

@@ -14,11 +14,11 @@ const projects = [
         "tags": ["machine learning", "perceptron"],
         "image": "projects/perceptron/icon.png",
         "url": "projects/perceptron/perceptron.html"},
-    {"name": "Rasterization - Midpoint Algorithm",
-    "description": "The Midpoint Algorithm is a simple algorithm to rasterize predetermined shapes. BEcause of a low number of multiplications it is also a fast algorithm and can be used for varius shapes",
+    {"name": "Midpoint Algorithm",
+    "description": "The Midpoint Algorithm is a simple algorithm to rasterize predetermined shapes. Because of a low number of multiplications it is also a fast algorithm and can be used for varius shapes",
     "tags": ["render pipeline", "rasterization"],
-    "image": "projects/rasterization-midpoint-algorithm/icon.png",
-    "url": "projects/rasterization-midpoint-algorithm/rasterization-midpoint-algorithm.html"}
+    "image": "projects/midpoint-algorithm/icon.png",
+    "url": "projects/midpoint-algorithm/midpoint-algorithm.html"}
 ]
 
 
