@@ -22,8 +22,6 @@ const projects = [
 ]
 
 
-
-
 const chip_container = document.getElementById("projects-chips-container");
 var search_tags = [];
 
@@ -98,7 +96,10 @@ function add_project(name, description, img_url, html_url){
     projects_container.appendChild(card);
 }
 
-function load_projects(){
+async function load_projects(){
+    const r = await fetch("scripts\\projects.json");
+    const projects = await r.json();
+
     projects.forEach(project => {
         add_project(project.name, project.description, project.image, project.url);
     });
