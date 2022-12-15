@@ -19,10 +19,19 @@ main > div{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 3rem;
 }
 
 #block1{
     padding: 0 2rem 2rem 2rem;
+}
+
+#block2{
+    padding: 0 2rem 2rem 2rem;
+}
+
+#midpoint-line-picture{
+    padding-top: 2rem;
 }
 
 #canvas_container{
@@ -35,6 +44,20 @@ main > div{
 
 #canvas_container canvas{
     border-radius: 0.3rem 0.3rem 0rem 0rem;
+}
+
+.canvas_controls{
+    background-color: white;
+    border: 1px solid rgb(71, 71, 71);
+    border-top: none;
+    height: 4rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 0rem 0rem 0.3rem 0.3rem;
+    gap: 0.6rem;
 }
 
 @media screen and (min-width:768px){    

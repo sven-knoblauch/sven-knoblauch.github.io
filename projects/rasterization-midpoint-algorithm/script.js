@@ -55,6 +55,47 @@ function writeCirclePixels(x, y, p, color){
 	writePixel(-y+p.x, -x+p.y, color);
 }
 
+function draw_random_circle(){
+	let a = random(255);
+	let b = random(255);
+	let c = random(255);
+
+	let col = color(a,b,c);
+	let p = createVector(10+Math.floor(random(20)), 10+Math.floor(random(20)));
+	let r = 5 + Math.floor(random(5));
+
+	draw_circle(p, r, col);
+}
+
+function draw_random_object(){
+	if(Math.random() < 0.5){
+		draw_random_circle();
+	}else{
+		draw_random_line();
+	}
+}
+
+function draw_random_line(){
+	let a = random(255);
+	let b = random(255);
+	let c = random(255);
+	let col1 = color(a,b,c);
+	a = random(255);
+	b = random(255);
+	c = random(255);
+	let col2 = color(a,b,c);
+
+	let p1 = createVector(Math.floor(random(40)),Math.floor(random(40)))
+	let p2 = createVector(Math.floor(random(40)),Math.floor(random(40)))
+
+	draw_line(p1, p2, col1, col2)
+}
+
+function reset_screen(){
+	background(255);
+	drawGrid(width_buckets, height_buckets);
+}
+
 function draw_circle(p, r, c) {
 	let x = 0;
 	let y = r;

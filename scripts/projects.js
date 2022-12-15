@@ -14,11 +14,11 @@ const projects = [
         "tags": ["machine learning", "perceptron"],
         "image": "projects/perceptron/icon.png",
         "url": "projects/perceptron/perceptron.html"},
-    {"name": "Rasterization",
-    "description": "Rasterization... In Progress",
+    {"name": "Rasterization - Midpoint Line Algorithm",
+    "description": "Rasterization - Midpoint Line Algorithm",
     "tags": ["render pipeline", "rasterization"],
-    "image": "projects/rasterization/icon.png",
-    "url": "projects/rasterization/rasterization.html"}
+    "image": "projects/rasterization-midpoint-algorithm/icon.png",
+    "url": "projects/rasterization-midpoint-algorithm/rasterization-midpoint-algorithm.html"}
 ]
 
 

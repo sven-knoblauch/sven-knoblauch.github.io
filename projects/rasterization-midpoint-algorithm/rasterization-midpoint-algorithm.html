@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../style/header_footer.css">     
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+</head>
+
+
+<body>
+
+    <header class="noselect">
+        <nav>
+            <div>
+                <div id="nav-colored-box"></div>
+                <div id="nav-header-highlight">Rasterization - Midpoint Line Algorithm</div>
+            </div>
+            <div id="header-links">
+                <div onclick="location.href='../../index.html'">ABOUT ME</div>
+                <div onclick="location.href='../../cv.html'">CV</div>
+                <div onclick="location.href='../../projects.html'">PROJECTS</div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div>
+            <div id="block1">
+                <h2>Rasterization</h2>
+                In the <strong>Rasterization Stage</strong>, the main goal is the convertion of primitives to an image of pixels. There are multiple ways to approximate a shape and translate it to
+                an realistic pixel image. Here we are discussing the procedure of midline algorithm. This algorithm can be implemented for multiple shapes. In this example we will discuss
+                the shapes of a line and a circle.
+
+                
+                <h2>Midpoint Line Algorithm</h2>
+                Let's start with the <strong>assumption</strong>, that the slope of the line is smaller than one but none negative. For all other posibillities, the rasterized line can be mirrored
+                and rotatet, so all possible lines are commemorated. Starting with these assumption at the start point, there are only two possible pixels which are relevant for the next pixel,
+                for on the pixel in the east (E) and the pixel in the nort-east (NE). Between these two point the midpoint is calculated. to determine witch pixel will be used, the <strong>only test</strong>
+                which has to performed is, if the line is above or below the middle point. If the line is above, the pixel in the north-easst corner is used, otherwise the east pixel is used. This
+                procedure can be performed interatively, when the change of the line is descriped with its derivative, which reduces the number of multiplications.      
+            </div>
+
+            <div>
+                <img id="midpoint-line-picture" src="rasterization-midpoint-line-alg.png" alt="midpoint line algorithm visualization">
+            </div>
+
+            <div id="block2">
+                <h2>Midpoint Algorithm for Circles</h2>
+                
+
+
+
+
+                <h2>Example</h2>
+                The following example is producing lines and circles at random with the discussed algorithms. For the implementation the javascript files can be inspected. For the
+                color of the lines, a simple interpolation between two colors are made.
+
+            </div>
+
+            <div id="canvas_container"></div>
+            <div class="canvas_controls">
+                <button onclick="draw_random_object()">Randomize</button>
+                <button onclick="reset_screen()">Reset</button>
+            </div>
+
+        </div>
+        <div id="background"></div>
+    </main>
+
+
+
+
+    <footer>
+        <div id="footer-container-left">
+            <div>@ 2022 Sven Knoblauch</div>
+        </div>
+
+        <div id="footer-container">
+            <div>
+                <div id="footer-bold">E-Mail</div>
+                <div>sven-knoblauch@hotmail.com</div>
+            </div>
+            <div>
+                <div id="footer-bold">Socials</div>
+                <div id="footer-socials-images">
+                    <img onclick="location.href='https://www.kaggle.com/svenknoblauch'" id="footer-icons" class="noselect" src="../../images/kaggle-icon.png" alt="kaggle logo">
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src="../../scripts/p5.js" defer></script>
+    <script src="script.js" defer></script>
+    
+</body>
+
+</html>

@@ -62,13 +62,6 @@ main > div{
     flex-direction: column;
 }
 
-.canvas_controls > div{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1rem;
-}
-
 #controls_buttons{
     display: flex;
     flex-direction: row;
