@@ -26,5 +26,12 @@
         "tags": ["render pipeline", "rasterization"],
         "image": "projects/midpoint-algorithm/icon.png",
         "url": "projects/midpoint-algorithm/midpoint-algorithm.html"
+    },
+    {
+        "name": "Scanline Algorithm",
+        "description": "The Scanline Algorithm is a rasterization algorithm, which uses scanlines to rasterize triangles.",
+        "tags": ["render pipeline", "rasterization"],
+        "image": "projects/scanline-algorithm/icon.png",
+        "url": "projects/scanline-algorithm/scanline-algorithm.html"
     }
 ]
