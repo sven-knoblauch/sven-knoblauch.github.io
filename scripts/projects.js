@@ -1,3 +1,41 @@
+const projects = [
+    {
+        "name": "Template",
+        "description": "template description",
+        "tags": ["template"],
+        "image": "projects/template/icon.jpg",
+        "url": "projects/template/template.html"
+    },
+    {
+        "name": "Newton's method",
+        "description": "The Newton-Raphson method is a root finding algorithm and can be used to find x-intersection of real valued functions. It is an iterative algorithm which uses the tangent of the function for the guidline of the next iteration step.",
+        "tags": ["math", "optimization", "machine learning"],
+        "image": "projects/newtons_method/icon.png",
+        "url": "projects/newtons_method/newtons_method.html"
+    },
+    {
+        "name": "Perceptron",
+        "description": "The Perceptron learn algorithm, learns a decision line in a finite number of steps, if the problem is linear separable. The decision lines consits of a weight vector and a bias.",
+        "tags": ["machine learning", "perceptron"],
+        "image": "projects/perceptron/icon.png",
+        "url": "projects/perceptron/perceptron.html"
+    },
+    {
+        "name": "Midpoint Algorithm",
+        "description": "The Midpoint Algorithm is a simple algorithm to rasterize predetermined shapes. Because of a low number of multiplications it is also a fast algorithm and can be used for varius shapes",
+        "tags": ["render pipeline", "rasterization"],
+        "image": "projects/midpoint-algorithm/icon.png",
+        "url": "projects/midpoint-algorithm/midpoint-algorithm.html"
+    },
+    {
+        "name": "Scanline Algorithm",
+        "description": "The Scanline Algorithm is a rasterization algorithm, which uses scanlines to rasterize triangles.",
+        "tags": ["render pipeline", "rasterization"],
+        "image": "projects/scanline-algorithm/icon.png",
+        "url": "projects/scanline-algorithm/scanline-algorithm.html"
+    }
+]
+
 const chip_container = document.getElementById("projects-chips-container");
 var search_tags = [];
 
@@ -73,8 +111,8 @@ function add_project(name, description, img_url, html_url){
 }
 
 async function load_projects(){
-    const r = await fetch("scripts\\projects.json");
-    const projects = await r.json();
+    //const r = await fetch("scripts\\projects.json");
+    //const projects = await r.json();
 
     projects.forEach(project => {
         add_project(project.name, project.description, project.image, project.url);

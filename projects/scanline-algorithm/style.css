@@ -26,12 +26,7 @@ main > div{
     padding: 0 2rem 2rem 2rem;
 }
 
-#midpoint-line-picture{
-    padding-top: 2rem;
-    width: 100%;
-}
-
-#midpoint-circle-picture{
+#scanline-picture{
     padding-top: 2rem;
     width: 100%;
 }
