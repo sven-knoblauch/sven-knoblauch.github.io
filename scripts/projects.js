@@ -1,10 +1,10 @@
 const projects = [
     {
-        "name": "Template",
+        "name": "Perlin Noise",
         "description": "template description",
-        "tags": ["template"],
-        "image": "projects/template/icon.jpg",
-        "url": "projects/template/template.html"
+        "tags": ["perlin noise"],
+        "image": "projects/perlinnoise/icon.png",
+        "url": "projects/perlinnoise/perlinnoise.html"
     },
     {
         "name": "Newton's method",
