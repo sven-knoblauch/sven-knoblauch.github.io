@@ -70,9 +70,11 @@ ul {
 }
 
 .canvas_controls button{
-    width: 6rem;
+    width: 8rem;
+    height: 2.5rem;
     margin-left: 1rem;
     margin-right: 1rem;
+    font-size: 1rem;
 }
 
 .slidecontainer{
