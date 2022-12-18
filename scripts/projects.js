@@ -2,14 +2,14 @@ const projects = [
     {
         "name": "Perlin Noise 1D",
         "description": "Perlin Noise 1D is a one dimensional noise with no jumps on adjecent points, which is used often for generative art",
-        "tags": ["perlin noise"],
+        "tags": ["noise"],
         "image": "projects/perlinnoise1D/icon.png",
         "url": "projects/perlinnoise1D/perlinnoise1D.html"
     },
     {
         "name": "Perlin Noise 2D",
         "description": "Perlin Noise 2D is a two dimensional noise with no jumps on adjecent points, which is used often for generative art such as flowfields and similar problems",
-        "tags": ["perlin noise"],
+        "tags": ["noise"],
         "image": "projects/perlinnoise2D/icon.png",
         "url": "projects/perlinnoise2D/perlinnoise2D.html"
     },
@@ -109,18 +109,11 @@ function add_project(name, description, img_url, html_url){
 
     card.appendChild(text_container);
     card.appendChild(img);
-    /*
-    card.onclick = function () {
-        location.href = html_url;
-    };
-    */
+
     projects_container.appendChild(card);
 }
 
 async function load_projects(){
-    //const r = await fetch("scripts\\projects.json");
-    //const projects = await r.json();
-
     projects.forEach(project => {
         add_project(project.name, project.description, project.image, project.url);
     });
