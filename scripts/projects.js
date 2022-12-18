@@ -1,10 +1,17 @@
 const projects = [
     {
-        "name": "Perlin Noise",
-        "description": "template description",
+        "name": "Perlin Noise 1D",
+        "description": "Perlin Noise 1D is a one dimensional noise with no jumps on adjecent points, which is used often for generative art",
         "tags": ["perlin noise"],
-        "image": "projects/perlinnoise/icon.png",
-        "url": "projects/perlinnoise/perlinnoise.html"
+        "image": "projects/perlinnoise1D/icon.png",
+        "url": "projects/perlinnoise1D/perlinnoise1D.html"
+    },
+    {
+        "name": "Perlin Noise 2D",
+        "description": "Perlin Noise 2D is a two dimensional noise with no jumps on adjecent points, which is used often for generative art such as flowfields and similar problems",
+        "tags": ["perlin noise"],
+        "image": "projects/perlinnoise2D/icon.png",
+        "url": "projects/perlinnoise2D/perlinnoise2D.html"
     },
     {
         "name": "Newton's method",

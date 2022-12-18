@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../style/header_footer.css">     
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+</head>
+
+
+<body>
+
+    <header class="noselect">
+        <nav>
+            <div>
+                <div id="nav-colored-box"></div>
+                <div id="nav-header-highlight">Perlin Noise 2D</div>
+            </div>
+            <div id="header-links">
+                <div onclick="location.href='../../index.html'">ABOUT ME</div>
+                <div onclick="location.href='../../cv.html'">CV</div>
+                <div onclick="location.href='../../projects.html'">PROJECTS</div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div>
+            <div class="block">
+                <h2>Perlin Noise 2D</h2>
+                
+
+
+            </div>
+
+            <div id="canvas_container1"></div>
+            <div class="canvas_controls">
+                <div class="slidecontainer">
+                    <div>
+                        Scale: 
+                    </div>
+                    <input type="range" min="2" max="550" value="200" step="1" class="slider" id="scale_slider" onchange="plot_perlin_noise_map()" oninput="plot_perlin_noise_map()">
+                </div>
+                <button onclick="plot_random_perlin_map()">Randomize</button>
+            </div>
+
+        </div>
+        <div id="background"></div>
+    </main>
+
+
+
+
+
+    <footer>
+        <div id="footer-container-left">
+            <div>@ 2022 Sven Knoblauch</div>
+        </div>
+
+        <div id="footer-container">
+            <div>
+                <div id="footer-bold">E-Mail</div>
+                <div>sven-knoblauch@hotmail.com</div>
+            </div>
+            <div>
+                <div id="footer-bold">Socials</div>
+                <div id="footer-socials-images">
+                    <img onclick="location.href='https://www.kaggle.com/svenknoblauch'" id="footer-icons" class="noselect" src="../../images/kaggle-icon.png" alt="kaggle logo">
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src="../../scripts/p5.js" defer></script>
+    <script src="script.js" defer></script>
+    
+</body>
+
+</html>

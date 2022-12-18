@@ -21,7 +21,7 @@
         <nav>
             <div>
                 <div id="nav-colored-box"></div>
-                <div id="nav-header-highlight">Perlin Noise</div>
+                <div id="nav-header-highlight">Perlin Noise 1D</div>
             </div>
             <div id="header-links">
                 <div onclick="location.href='../../index.html'">ABOUT ME</div>
@@ -35,10 +35,11 @@
     <main>
         <div>
             <div class="block">
-                <h2>One Dimensional Perlin Noise</h2>
+                <h2>Perlin Noise 1D</h2>
                 Perlin Noise is noise where there are <strong>no jumps</strong> on adjecent values. This is visible in the more smooth look of the noise and the absence of hard edges.
                 To calculate this noise, a simple array with random numbers are calculated and the the values between the array are
-                <strong>interpolated</strong>, for example with a polynomial of degree 5.
+                <strong>interpolated</strong>, for example with a polynomial of degree 5. For better controll, the distance between the random points can be controlled and the
+                amplitute of the points can be changed. This will produce a controllable perlin noise.
             </div>
 
             <div id="canvas_container1"></div>
@@ -51,26 +52,12 @@
                 </div>
                 <div class="slidecontainer">
                     <div>
-                        Strength: 
+                        Distance: 
                     </div>
                     <input type="range" min="2" max="100" value="12" class="slider" id="strength_slider" onchange="plot_perlin_noise()" oninput="plot_perlin_noise()">
                 </div>
                 <button onclick="plot_perlin_noise()">Randomize</button>
             </div>
-
-            <div class="block">
-                <h2>Two Dimensional Perlin Noise</h2>
-                
-                
-
-
-
-
-
-
-
-            </div>
-
 
         </div>
         <div id="background"></div>
