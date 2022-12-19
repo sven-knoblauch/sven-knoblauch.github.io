@@ -1,5 +1,12 @@
 const projects = [
     {
+        "name": "Flowfield",
+        "description": "description",
+        "tags": ["perlin noise", "generative art"],
+        "image": "projects/flowfield/icon.png",
+        "url": "projects/flowfield/flowfield.html"
+    },
+    {
         "name": "Perlin Noise 1D",
         "description": "Perlin Noise 1D is a one dimensional noise with no jumps on adjecent points, which is used often for generative art",
         "tags": ["noise"],
