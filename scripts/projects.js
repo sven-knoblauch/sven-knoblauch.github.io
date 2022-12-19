@@ -1,7 +1,7 @@
 const projects = [
     {
         "name": "Flowfield",
-        "description": "description",
+        "description": "Flowfields are generated with 2D perlin noise and are maps, which descibe a flow of particles. These particles can then be animated to traverse the map.",
         "tags": ["perlin noise", "generative art"],
         "image": "projects/flowfield/icon.png",
         "url": "projects/flowfield/flowfield.html"

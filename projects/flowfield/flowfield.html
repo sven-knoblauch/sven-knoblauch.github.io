@@ -43,13 +43,13 @@
                     <div>
                         Number Points: 
                     </div>
-                    <input type="range" min="5" max="500" value="200" step="1" class="slider" id="points_slider" oninput="number_points_changed()">
+                    <input type="range" min="5" max="500" value="200" step="1" class="slider" id="points_slider" onchange="number_points_changed()">
                 </div>
                 <div class="slidecontainer">
                     <div>
                         Scale: 
                     </div>
-                    <input type="range" min="10" max="300" value="150" class="slider" id="scale_slider" oninput="update_flowfield()">
+                    <input type="range" min="10" max="300" value="150" class="slider" id="scale_slider" onchange="update_flowfield()">
                 </div>
                 <button onclick="clear_flowfield()">Clear</button>
                 <button onclick="draw_for_5sec()">Start Animation</button>
