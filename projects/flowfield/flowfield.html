@@ -33,8 +33,14 @@
         <div>
             <div class="block">
                 <h2>Flowfield</h2>
-                
+                A Flowfield makes use of a two dimensional perlin noise map. Where the value of each point is then converted to a vector. The result is a map full of vectors. Now
+                particles can be generated which uses these vectors to calculate the velocity. Because of the smooth nature of perlin noise, the result is a smooth looking particle
+                animation.
+
                 <h2>Example</h2>
+                This example uses the p5.js perlin noise to generate the vector field and then animates particle to follow these vectors. For more controll the number of particles can be adjusted
+                but carefully for large numbers of particles, which can be slow on some devices. The second controll is the scale of the perlin noise map, which results in more smooth or random pathways of the 
+                particles. The buttons are made to controll the animation and reset the flowfield. And also to randomly generate a new flowmap. 
             </div>
 
             <div id="canvas_container"></div>
